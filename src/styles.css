@@ -1,0 +1,10 @@
+.transition-hover {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-icon:hover {
+    color: #070707;
+    transform: scale(1.1);
+    transition: all 0.2s ease;
+  }
+  

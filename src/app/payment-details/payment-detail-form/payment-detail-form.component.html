@@ -1,0 +1,76 @@
+<div class="card shadow-sm border-0 rounded-4 p-4">
+  <form autocomplete="off" (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <!-- 🔒 Hidden ID Field (used for edit operations) -->
+    <input
+      type="hidden"
+      name="paymentDetailID"
+      [(ngModel)]="service.formData.paymentDetailID"
+    />
+
+    <!-- Card Owner Name -->
+    <div class="mb-3">
+      <label for="cardOwnerName" class="form-label">Card Owner Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="cardOwnerName"
+        placeholder="Name on Card"
+        name="cardOwnerName"
+        [(ngModel)]="service.formData.cardOwnerName"
+        required
+      />
+    </div>
+
+    <!-- Card Number -->
+    <div class="mb-3">
+      <label for="cardNumber" class="form-label">Card Number</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter 16 digit Card number"
+        id="cardNumber"
+        name="cardNumber"
+        [(ngModel)]="service.formData.cardNumber"
+        required
+      />
+    </div>
+
+    <!-- Expiration Date & Security Code (Same Row) -->
+    <div class="row">
+      <!-- Expiration Date -->
+      <div class="mb-3 col-6">
+        <label for="expirationDate" class="form-label">Expiration Date</label>
+        <input
+          type="text"
+          class="form-control"
+          id="expirationDate"
+          name="expirationDate"
+          placeholder="MM/YY"
+          [(ngModel)]="service.formData.expirationDate"
+          required
+        />
+      </div>
+
+      <!-- Security Code (CVV) -->
+      <div class="mb-3 col-6">
+        <label for="securityCode" class="form-label">Security Code (CVV)</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="CVV"
+          id="securityCode"
+          name="securityCode"
+          [(ngModel)]="service.formData.securityCode"
+          required
+        />
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="d-grid">
+      <button type="submit" class="btn btn-success" [disabled]="!form.valid">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
