@@ -1,3 +1,5 @@
+// src/environments/environment.ts
 export const environment = {
-     apiBaseUrl : "http://localhost:5028/api/"
-};
+     apiBaseUrl: 'https://paymentapi-zocz.onrender.com/api/'
+   };
+   
