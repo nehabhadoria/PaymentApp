@@ -7,7 +7,8 @@ import { PaymentDetail } from './payment-detail.model';
   providedIn: 'root'
 })
 export class PaymentDetailService {
-  url: string = environment.apiBaseUrl + 'PaymentDetails';
+  url: string = environment.apiBaseUrl + 'payment'; // becomes https://localhost:7071/api/payment
+
 
   // ✅ Holds all payment details fetched from the API
   paymentList: PaymentDetail[] = [];
@@ -37,7 +38,7 @@ export class PaymentDetailService {
 
   // ✏️ PUT: Update an existing payment detail
   putPaymentDetail() {
-    return this.http.put(`${this.url}/${this.formData.paymentDetailID}`, this.formData);
+    return this.http.put(`${this.url}/${this.formData.paymentDetailId}`, this.formData);
   }
   deletePaymentDetail(id: number) {
     return this.http.delete(`${this.url}/${id}`);

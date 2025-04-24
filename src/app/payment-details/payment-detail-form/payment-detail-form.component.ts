@@ -14,7 +14,7 @@ export class PaymentDetailFormComponent {
 
   // 🔁 Handle form submission
   onSubmit(form: NgForm) {
-    if (this.service.formData.paymentDetailID === 0) {
+    if (this.service.formData.paymentDetailId === 0) {
       this.insertRecord(form);  // ➕ POST
     } else {
       this.updateRecord(form);  // ✏️ PUT
@@ -53,7 +53,7 @@ export class PaymentDetailFormComponent {
   resetForm(form: NgForm) {
     form.resetForm();
     this.service.formData = {
-      paymentDetailID: 0,
+      paymentDetailId: 0,
       cardOwnerName: '',
       cardNumber: '',
       expirationDate: '',
